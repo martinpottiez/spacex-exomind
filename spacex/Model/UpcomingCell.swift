@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class UpcomingCell: UICollectionViewCell, ImgDownloaderDelegate {
+class UpcomingCell: UICollectionViewCell, ImgDownloaderDelegate, UICollectionViewDelegate {
 
     @IBOutlet private weak var dateCell: UILabel!
     @IBOutlet private weak var nameCell: UILabel!

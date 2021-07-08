@@ -11,7 +11,9 @@ class HomeController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    var launches: [Launch] = []
+    var pastLaunches: [Launch] = []
+    var upcomingLaunches: [Launch] = []
+    var selectedLaunch: Int!
     
     override func viewDidLoad() {
         
@@ -26,6 +28,12 @@ class HomeController: UIViewController {
         self.collectionView.collectionViewLayout = self.createLayout()
        // createDataSource()
         self.collectionView.contentInset.top = 150
+        self.collectionView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     private lazy var dataSource: UICollectionViewDiffableDataSource<Section, Launch> = {
@@ -149,8 +157,6 @@ class HomeController: UIViewController {
     }
     
     private func update(launch: [Launch]) {
-        var pastLaunches: [Launch] = []
-        var upcomingLaunches: [Launch] = []
         
         for eachLaunch in launch {
             switch eachLaunch.upcoming {
@@ -172,6 +178,15 @@ class HomeController: UIViewController {
         reloadData(pastLaunches: pastLaunches, upcomingLaunches: upcomingLaunches)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.destination is UpcomingController {
+            print(selectedLaunch)
+            let vc = segue.destination as? UpcomingController
+            vc?.launch = upcomingLaunches[selectedLaunch]
+        }
+    }
+    
     @objc
     private func getLaunches() {
         LaunchService.shared.getLaunch { success, launch
@@ -183,8 +198,9 @@ class HomeController: UIViewController {
     }
 }
 
-extension HomeController {
+extension HomeController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
+        selectedLaunch = indexPath.row
+        self.performSegue(withIdentifier: "upcoming", sender: nil)
     }
 }

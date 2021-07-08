@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Patch: Hashable, Decodable {
+    var small: String?
+    var large: String?
+}

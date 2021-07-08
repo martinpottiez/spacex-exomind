@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct Launch: Hashable, Decodable {
+    
+    enum CodingKeys: String, CodingKey, Hashable {
+        case name,
+             links,
+             upcoming
+        case dateUnix = "date_unix"
+    }
+    var links: LaunchLinks?
+    var name: String?
+    var upcoming: Bool?
+    var dateUnix: Int
+}
