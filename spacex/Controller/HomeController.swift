@@ -14,27 +14,7 @@ class HomeController: UIViewController {
     var pastLaunches: [Launch] = []
     var upcomingLaunches: [Launch] = []
     var selectedLaunch: Int!
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
-        self.collectionView.register(UpcomingCell.nib, forCellWithReuseIdentifier: UpcomingCell.identifier)
-        self.collectionView.register(OldCell.nib, forCellWithReuseIdentifier: OldCell.identifier)
-        self.collectionView.register(SectionHeader.nib,
-                                     forSupplementaryViewOfKind: "SectionHeaderKind",
-                                     withReuseIdentifier: SectionHeader.identifier)
-        getLaunches()
-        self.collectionView.collectionViewLayout = self.createLayout()
-       // createDataSource()
-        self.collectionView.contentInset.top = 150
-        self.collectionView.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
-    }
+    var selectedSection: Int!
     
     private lazy var dataSource: UICollectionViewDiffableDataSource<Section, Launch> = {
         let dataSource = UICollectionViewDiffableDataSource<Section, Launch>(collectionView: self.collectionView) { collectionView, indexPath, item in
@@ -59,6 +39,38 @@ class HomeController: UIViewController {
         dataSource.supplementaryViewProvider = self.supplementary(collectionView:kind:indexPath:)
         return dataSource
     }()
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
+        self.collectionView.register(UpcomingCell.nib, forCellWithReuseIdentifier: UpcomingCell.identifier)
+        self.collectionView.register(OldCell.nib, forCellWithReuseIdentifier: OldCell.identifier)
+        self.collectionView.register(SectionHeader.nib,
+                                     forSupplementaryViewOfKind: "SectionHeaderKind",
+                                     withReuseIdentifier: SectionHeader.identifier)
+        getLaunches()
+        self.collectionView.collectionViewLayout = self.createLayout()
+       // createDataSource()
+        self.collectionView.contentInset.top = 150
+        self.collectionView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.destination is UpcomingController {
+            let data = segue.destination as? UpcomingController
+            data?.launch = upcomingLaunches[selectedLaunch]
+        } else {
+            let data = segue.destination as? OldController
+            data?.launch = pastLaunches[selectedLaunch]
+        }
+    }
     
     private func createLayout() -> UICollectionViewLayout {
         UICollectionViewCompositionalLayout(sectionProvider: self.createSection(index: environment:))
@@ -178,14 +190,6 @@ class HomeController: UIViewController {
         reloadData(pastLaunches: pastLaunches, upcomingLaunches: upcomingLaunches)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.destination is UpcomingController {
-            let vc = segue.destination as? UpcomingController
-            vc?.launch = upcomingLaunches[selectedLaunch]
-        }
-    }
-    
     @objc
     private func getLaunches() {
         LaunchService.shared.getLaunch { success, launch
@@ -200,6 +204,12 @@ class HomeController: UIViewController {
 extension HomeController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedLaunch = indexPath.row
-        self.performSegue(withIdentifier: "upcoming", sender: nil)
+        selectedSection = indexPath.section
+        
+        if selectedSection == 0 {
+            self.performSegue(withIdentifier: "upcoming", sender: nil)
+        } else {
+            self.performSegue(withIdentifier: "old", sender: nil)
+        }
     }
 }

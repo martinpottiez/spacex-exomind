@@ -28,7 +28,7 @@ class UpcomingController: UIViewController, ImgDownloaderDelegate {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
-        self.navigationController?.editButtonItem.title = ""
+        
         
         let time = Double(launch.dateUnix)
         let date = Date(timeIntervalSince1970: time)

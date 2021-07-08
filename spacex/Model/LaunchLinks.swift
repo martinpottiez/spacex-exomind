@@ -11,11 +11,12 @@ struct LaunchLinks: Hashable, Decodable {
     enum CodingKeys: String, CodingKey {
         case article,
              wikipedia,
-             patch
+             patch,
+             flickr
         case youtubeId = "youtube_id"
     }
     var patch: Patch?
-    //var reddit: String?
+    var flickr: Flickr?
     var youtubeId: String?
     var article: String?
     var wikipedia: String?

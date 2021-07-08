@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class UpcomingCell: UICollectionViewCell,  UICollectionViewDelegate {
+class UpcomingCell: UICollectionViewCell, UICollectionViewDelegate {
 
     @IBOutlet private weak var dateCell: UILabel!
     @IBOutlet private weak var nameCell: UILabel!

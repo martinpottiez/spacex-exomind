@@ -32,4 +32,28 @@ class ImgDownloader {
         }
         download.resume()
     }
+    
+    func getImages(launch: Launch) {
+        guard let icons = launch.links?.flickr?.original else {
+            return
+        }
+        let session = URLSession(configuration: .default)
+        
+        for eachImage in icons {
+            
+            guard let iconUrl = URL(string: eachImage) else { return
+            }
+            
+            let download = session.dataTask(with: iconUrl) { [weak self] data, response, error in
+                if let _ = error {
+                    print("error 1")
+                } else {
+                    if (response as? HTTPURLResponse) != nil {
+                        self?.delegate?.downloadFinished(data: data, launch: launch)
+                    }
+                }
+            }
+            download.resume()
+        }
+    }
 }
