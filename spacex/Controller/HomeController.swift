@@ -181,7 +181,6 @@ class HomeController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.destination is UpcomingController {
-            print(selectedLaunch)
             let vc = segue.destination as? UpcomingController
             vc?.launch = upcomingLaunches[selectedLaunch]
         }

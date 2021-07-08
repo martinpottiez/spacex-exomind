@@ -10,7 +10,7 @@ import Foundation
 
 
 
-class UpcomingCell: UICollectionViewCell, ImgDownloaderDelegate, UICollectionViewDelegate {
+class UpcomingCell: UICollectionViewCell,  UICollectionViewDelegate {
 
     @IBOutlet private weak var dateCell: UILabel!
     @IBOutlet private weak var nameCell: UILabel!
@@ -21,12 +21,6 @@ class UpcomingCell: UICollectionViewCell, ImgDownloaderDelegate, UICollectionVie
     static var nib: UINib {
         UINib(nibName: String(describing: self), bundle: nil)
     }
-    
-    lazy var imgDownloader: ImgDownloader = {
-        let imgDownloader = ImgDownloader()
-        imgDownloader.delegate = self
-        return imgDownloader
-    }()
     
     var launch: Launch?
     
@@ -44,19 +38,6 @@ class UpcomingCell: UICollectionViewCell, ImgDownloaderDelegate, UICollectionVie
             dateCell.text = dateFormater.string(from: date).uppercased()
         } else {
             dateCell.text = "UNAVAILABLE"
-        }
-        //imgDownloader.getImage(launch: item)
-    }
-    
-    func downloadFinished(data: Data?, launch: Launch) {
-        guard let data = data,
-              self.launch?.name == launch.name
-              else {
-            return
-        }
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.imageCell.image = UIImage(data: data)
         }
     }
     
