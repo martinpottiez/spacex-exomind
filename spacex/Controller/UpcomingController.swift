@@ -42,7 +42,7 @@ class UpcomingController: UIViewController, ImgDownloaderDelegate {
         }
         
         nameLaunch.text = launch.name
-        imgDownloader.getImage(launch: launch)
+        imgDownloader.getIcon(launch: launch)
     }
     
     func downloadFinished(data: Data?, launch: Launch) {
