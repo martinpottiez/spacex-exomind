@@ -13,6 +13,7 @@ class OldController: UIViewController {
     
     @IBOutlet private weak var dateLaunch: UILabel!
     @IBOutlet private weak var titleLaunch: UILabel!
+    @IBOutlet private weak var descLaunch: UILabel!
     @IBOutlet private weak var successLaunch: UILabel!
     @IBOutlet private weak var recoveredLaunch: UILabel!
     @IBOutlet private weak var reusedLaunch: UILabel!
@@ -22,6 +23,7 @@ class OldController: UIViewController {
     @IBOutlet private weak var allImages: UIStackView!
     @IBOutlet private weak var table: UIStackView!
     @IBOutlet private weak var scrollView: UIScrollView!
+    
     var launch: Launch!
 
     override func viewDidLoad() {
@@ -48,6 +50,8 @@ class OldController: UIViewController {
         
         flightNumberLaunch.text = String(launch.flightNumber)
         titleLaunch.text = launch.name?.uppercased()
+        descLaunch.text = launch.details
+        
         if launch.success ?? false {
             successLaunch.text = "Valid"
         } else {
