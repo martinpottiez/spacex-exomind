@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class OldController: UIViewController, ImgDownloaderDelegate {
+class OldController: UIViewController {
     
     
     @IBOutlet private weak var dateLaunch: UILabel!
@@ -18,15 +18,11 @@ class OldController: UIViewController, ImgDownloaderDelegate {
     @IBOutlet private weak var reusedLaunch: UILabel!
     @IBOutlet private weak var flightNumberLaunch: UILabel!
     @IBOutlet private var images: [UIImageView]!
-    
+    @IBOutlet private weak var secondStackView: UIStackView!
+    @IBOutlet private weak var allImages: UIStackView!
+    @IBOutlet private weak var linksButton: UIStackView!
+    @IBOutlet private weak var table: UIStackView!
     var launch: Launch!
-    var imagesDownloaded: [UIImage] = []
-    
-    lazy var imgDownloader: ImgDownloader = {
-        let imgDownloader = ImgDownloader()
-        imgDownloader.delegate = self
-        return imgDownloader
-    }()
 
     override func viewDidLoad() {
         
@@ -59,7 +55,7 @@ class OldController: UIViewController, ImgDownloaderDelegate {
         if (launch.fairings?.recovered) != nil {
             recoveredLaunch.text = "Valid"
         } else {
-            recoveredLaunch.text = "Fail"
+            recoveredLaunch.text = "No"
         }
         
         if (launch.fairings?.reused) != nil {
@@ -67,24 +63,24 @@ class OldController: UIViewController, ImgDownloaderDelegate {
         } else {
             reusedLaunch.text = "No"
         }
-        imgDownloader.getImages(launch: launch)
-    }
+        if let link = launch?.links?.flickr?.original {
+            for (inc, eachImage) in link.enumerated() {
+                if inc > 3 {
+                    return
+                }
+                images[inc].layer.cornerRadius = 5
+                images[inc].sd_setImage(with: URL(string: eachImage))
+            }
+            switch link.count {
+            case 0:
+                allImages.isHidden = true
     
-    func downloadImagesFinished(data: [Data]?, launch: Launch) {
-        guard let data = data,
-              self.launch?.name == launch.name
-              else {
-            return
-        }
-        
-        DispatchQueue.main.async { [weak self] in
-            for (increment, eachData) in data.enumerated() {
+            case 2:
+                secondStackView.isHidden = true
                 
-                self?.images[increment].image = UIImage(data: eachData)
-            }//self?.imagesDownloaded.append( UIImage(data: data) ?? UIImage())
+            default:
+                break
+            }
         }
-    }
-    
-    func downloadFinished(data: Data?, launch: Launch) {
     }
 }

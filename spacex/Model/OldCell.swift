@@ -8,10 +8,11 @@
 import UIKit
 import SDWebImage
 
-class OldCell: UICollectionViewCell, ImgDownloaderDelegate {
+class OldCell: UICollectionViewCell {
 
     @IBOutlet private weak var dateCell: UILabel!
     @IBOutlet private weak var nameCell: UILabel!
+    @IBOutlet private weak var overlayCell: UIView!
     @IBOutlet private weak var imageCell: UIImageView!
     
     static let identifier = "OldCell"
@@ -22,12 +23,6 @@ class OldCell: UICollectionViewCell, ImgDownloaderDelegate {
     
     var launch: Launch?
     
-    lazy var imgDownloader: ImgDownloader = {
-        let imgDownloader = ImgDownloader()
-        imgDownloader.delegate = self
-        return imgDownloader
-    }()
-    
     func configure(with item: Launch) {
         
         let time = Double(item.dateUnix)
@@ -35,6 +30,7 @@ class OldCell: UICollectionViewCell, ImgDownloaderDelegate {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "dd MMMM yyyy"
         
+        overlayCell.layer.cornerRadius = 5
         imageCell.layer.cornerRadius = 5
         
         self.launch = item
@@ -51,27 +47,14 @@ class OldCell: UICollectionViewCell, ImgDownloaderDelegate {
         if let link = launch?.links?.flickr?.original?.first {
             imageCell
                 .sd_setImage(with: URL(string: link), placeholderImage: #imageLiteral(resourceName: "OldImg"))
+        } else {
+            imageCell.image = #imageLiteral(resourceName: "OldImg")
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    
-    func downloadFinished(data: Data?, launch: Launch) {
-        guard let data = data,
-              self.launch?.name == launch.name
-              else {
-            return
-        }
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.imageCell.image = UIImage(data: data)
-        }
-    }
-    
-    func downloadImagesFinished(data: [Data]?, launch: Launch) {
     }
     
     override func prepareForReuse() {

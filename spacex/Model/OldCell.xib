@@ -67,6 +67,7 @@
                 <outlet property="dateCell" destination="Xai-UA-RZG" id="NDC-Fq-j1y"/>
                 <outlet property="imageCell" destination="dLk-6p-l4e" id="76l-4L-DpT"/>
                 <outlet property="nameCell" destination="Mv2-23-cCi" id="g0m-5d-icJ"/>
+                <outlet property="overlayCell" destination="Xew-1c-1aX" id="SQf-Ss-ezn"/>
             </connections>
             <point key="canvasLocation" x="293.47826086956525" y="134.26339285714286"/>
         </collectionViewCell>
