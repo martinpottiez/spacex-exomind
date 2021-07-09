@@ -347,13 +347,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YIg-mW-7nW">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="184"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uKn-As-pgq">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uKn-As-pgq">
                                                                 <rect key="frame" x="0.0" y="0.0" width="184" height="184"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="uKn-As-pgq" secondAttribute="height" multiplier="1:1" id="xNf-cg-Z0T"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4DX-XE-kcA">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4DX-XE-kcA">
                                                                 <rect key="frame" x="204" y="0.0" width="184" height="184"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="4DX-XE-kcA" secondAttribute="height" multiplier="1:1" id="8U1-AD-rb0"/>
@@ -364,13 +364,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aw2-Db-icy">
                                                         <rect key="frame" x="0.0" y="204" width="388" height="184"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="haz-YW-FCB">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="haz-YW-FCB">
                                                                 <rect key="frame" x="0.0" y="0.0" width="184" height="184"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="haz-YW-FCB" secondAttribute="height" multiplier="1:1" id="RgA-1w-QG2"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i3e-kC-k8V">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i3e-kC-k8V">
                                                                 <rect key="frame" x="204" y="0.0" width="184" height="184"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="i3e-kC-k8V" secondAttribute="height" multiplier="1:1" id="uHu-bE-7eT"/>

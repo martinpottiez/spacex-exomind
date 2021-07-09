@@ -56,4 +56,8 @@ class UpcomingController: UIViewController, ImgDownloaderDelegate {
             self?.logoLaunch.image = UIImage(data: data)
         }
     }
+    
+    func downloadImagesFinished(data: [Data]?, launch: Launch) {
+        print("ok")
+    }
 }

@@ -8,7 +8,8 @@
 import UIKit
 import Foundation
 
-class OldController: UIViewController, ImgDownloaderDelegate  {
+class OldController: UIViewController, ImgDownloaderDelegate {
+    
     
     @IBOutlet private weak var dateLaunch: UILabel!
     @IBOutlet private weak var titleLaunch: UILabel!
@@ -67,13 +68,9 @@ class OldController: UIViewController, ImgDownloaderDelegate  {
             reusedLaunch.text = "No"
         }
         imgDownloader.getImages(launch: launch)
-        let prefix = self.imagesDownloaded.prefix(4)
-        for eachImage in Array(prefix) {
-            images.append(UIImageView(image: eachImage))
-        }
     }
     
-    func downloadFinished(data: Data?, launch: Launch) {
+    func downloadImagesFinished(data: [Data]?, launch: Launch) {
         guard let data = data,
               self.launch?.name == launch.name
               else {
@@ -81,7 +78,13 @@ class OldController: UIViewController, ImgDownloaderDelegate  {
         }
         
         DispatchQueue.main.async { [weak self] in
-            self?.imagesDownloaded.append( UIImage(data: data) ?? UIImage())
+            for (increment, eachData) in data.enumerated() {
+                
+                self?.images[increment].image = UIImage(data: eachData)
+            }//self?.imagesDownloaded.append( UIImage(data: data) ?? UIImage())
         }
+    }
+    
+    func downloadFinished(data: Data?, launch: Launch) {
     }
 }

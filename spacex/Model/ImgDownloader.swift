@@ -6,10 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ImgDownloaderDelegate: AnyObject {
     func downloadFinished(data: Data?, launch: Launch)
+    func downloadImagesFinished(data: [Data]?, launch: Launch)
 }
+
+private let kMaxImages = 4
 
 class ImgDownloader {
     weak var delegate: ImgDownloaderDelegate?
@@ -34,12 +38,18 @@ class ImgDownloader {
     }
     
     func getImages(launch: Launch) {
-        guard let icons = launch.links?.flickr?.original else {
+        guard let icons = launch.links?.flickr?.original?.prefix(kMaxImages) else {
             return
         }
         let session = URLSession(configuration: .default)
-        
-        for eachImage in icons {
+        var allData: [Data] = [] {
+            didSet {
+                if allData.count == kMaxImages {
+                    self.delegate?.downloadImagesFinished(data: allData, launch: launch)
+                }
+            }
+        }
+        for  eachImage in icons {
             
             guard let iconUrl = URL(string: eachImage) else { return
             }
@@ -49,7 +59,7 @@ class ImgDownloader {
                     print("error 1")
                 } else {
                     if (response as? HTTPURLResponse) != nil {
-                        self?.delegate?.downloadFinished(data: data, launch: launch)
+                        allData.append(data ?? Data())
                     }
                 }
             }
