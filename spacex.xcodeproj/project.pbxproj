@@ -14,13 +14,9 @@
 		5B0BA902269310D6005ABA8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B0BA900269310D6005ABA8A /* LaunchScreen.storyboard */; };
 		5B0BA91026932BF9005ABA8A /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BA90F26932BF9005ABA8A /* HomeController.swift */; };
 		5B0BA91226933908005ABA8A /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BA91126933908005ABA8A /* Launch.swift */; };
-		5B0BA91426933D74005ABA8A /* LaunchLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BA91326933D74005ABA8A /* LaunchLinks.swift */; };
 		5B0BA91626933FAB005ABA8A /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BA91526933FAB005ABA8A /* Section.swift */; };
 		5B0BA91A26934EF9005ABA8A /* LaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BA91926934EF9005ABA8A /* LaunchService.swift */; };
-		5B28A78C269444E400640468 /* Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B28A78B269444E400640468 /* Patch.swift */; };
 		5B5A4A7B2696EC8900EDABF7 /* OldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5A4A7A2696EC8900EDABF7 /* OldController.swift */; };
-		5B5A4A7D2697279600EDABF7 /* Fairings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5A4A7C2697279600EDABF7 /* Fairings.swift */; };
-		5B5A4A7F2697310100EDABF7 /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5A4A7E2697310100EDABF7 /* Flickr.swift */; };
 		5BCE66722695A5BD0021EE00 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE66702695A5BD0021EE00 /* SectionHeader.swift */; };
 		5BCE66732695A5BD0021EE00 /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE66712695A5BD0021EE00 /* SectionHeader.xib */; };
 		5BF58963269483E100B48A3D /* UpcomingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF58961269483E100B48A3D /* UpcomingCell.swift */; };
@@ -41,13 +37,9 @@
 		5B0BA903269310D6005ABA8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B0BA90F26932BF9005ABA8A /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = spacex/Controller/HomeController.swift; sourceTree = SOURCE_ROOT; };
 		5B0BA91126933908005ABA8A /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
-		5B0BA91326933D74005ABA8A /* LaunchLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLinks.swift; sourceTree = "<group>"; };
 		5B0BA91526933FAB005ABA8A /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Section.swift; path = spacex/Model/Section.swift; sourceTree = SOURCE_ROOT; };
 		5B0BA91926934EF9005ABA8A /* LaunchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchService.swift; sourceTree = "<group>"; };
-		5B28A78B269444E400640468 /* Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patch.swift; sourceTree = "<group>"; };
 		5B5A4A7A2696EC8900EDABF7 /* OldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldController.swift; sourceTree = "<group>"; };
-		5B5A4A7C2697279600EDABF7 /* Fairings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fairings.swift; sourceTree = "<group>"; };
-		5B5A4A7E2697310100EDABF7 /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
 		5BCE66702695A5BD0021EE00 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		5BCE66712695A5BD0021EE00 /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		5BF58961269483E100B48A3D /* UpcomingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCell.swift; sourceTree = "<group>"; };
@@ -129,10 +121,6 @@
 				5BF58962269483E100B48A3D /* UpcomingCell.xib */,
 				5B0BA91926934EF9005ABA8A /* LaunchService.swift */,
 				5B0BA91126933908005ABA8A /* Launch.swift */,
-				5B5A4A7C2697279600EDABF7 /* Fairings.swift */,
-				5B0BA91326933D74005ABA8A /* LaunchLinks.swift */,
-				5B5A4A7E2697310100EDABF7 /* Flickr.swift */,
-				5B28A78B269444E400640468 /* Patch.swift */,
 				5BF5896726949D8500B48A3D /* OldCell.swift */,
 				5BF5896826949D8500B48A3D /* OldCell.xib */,
 				5BCE66702695A5BD0021EE00 /* SectionHeader.swift */,
@@ -300,14 +288,10 @@
 				5B5A4A7B2696EC8900EDABF7 /* OldController.swift in Sources */,
 				5BF5896926949D8500B48A3D /* OldCell.swift in Sources */,
 				5B0BA91626933FAB005ABA8A /* Section.swift in Sources */,
-				5B0BA91426933D74005ABA8A /* LaunchLinks.swift in Sources */,
 				5B0BA91026932BF9005ABA8A /* HomeController.swift in Sources */,
 				5B024AE82695E1C000049DD8 /* UpcomingController.swift in Sources */,
-				5B5A4A7F2697310100EDABF7 /* Flickr.swift in Sources */,
 				5B0BA91226933908005ABA8A /* Launch.swift in Sources */,
-				5B5A4A7D2697279600EDABF7 /* Fairings.swift in Sources */,
 				5B0BA8F6269310D5005ABA8A /* AppDelegate.swift in Sources */,
-				5B28A78C269444E400640468 /* Patch.swift in Sources */,
 				5BCE66722695A5BD0021EE00 /* SectionHeader.swift in Sources */,
 				5BF58963269483E100B48A3D /* UpcomingCell.swift in Sources */,
 				5BF589662694908500B48A3D /* ImgDownloader.swift in Sources */,
