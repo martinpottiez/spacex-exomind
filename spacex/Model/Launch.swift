@@ -13,7 +13,8 @@ struct Launch: Hashable, Decodable {
         case name,
              links,
              upcoming,
-             success
+             success,
+             details
         case dateUnix = "date_unix"
         case flightNumber = "flight_number"
     }
@@ -24,4 +25,5 @@ struct Launch: Hashable, Decodable {
     var name: String?
     var upcoming: Bool?
     var dateUnix: Int
+    var details: String?
 }
