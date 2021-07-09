@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class OldCell: UICollectionViewCell, ImgDownloaderDelegate {
 
@@ -39,14 +40,18 @@ class OldCell: UICollectionViewCell, ImgDownloaderDelegate {
         self.launch = item
         
         nameCell.text = item.name
-        imageCell.image = #imageLiteral(resourceName: "OldImg")
+        //imageCell.image = #imageLiteral(resourceName: "OldImg")
         
         if dateFormater.string(from: date) != nil {
             dateCell.text = dateFormater.string(from: date).uppercased()
         } else {
             dateCell.text = "UNAVAILABLE"
         }
-        imgDownloader.getImage(launch: item)
+        //imgDownloader.getImage(launch: item)
+        if let link = launch?.links?.flickr?.original?.first {
+            imageCell
+                .sd_setImage(with: URL(string: link), placeholderImage: #imageLiteral(resourceName: "OldImg"))
+        }
     }
     
     override func awakeFromNib() {
