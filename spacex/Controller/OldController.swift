@@ -20,8 +20,8 @@ class OldController: UIViewController {
     @IBOutlet private var images: [UIImageView]!
     @IBOutlet private weak var secondStackView: UIStackView!
     @IBOutlet private weak var allImages: UIStackView!
-    @IBOutlet private weak var linksButton: UIStackView!
     @IBOutlet private weak var table: UIStackView!
+    @IBOutlet private weak var scrollView: UIScrollView!
     var launch: Launch!
 
     override func viewDidLoad() {
@@ -33,6 +33,8 @@ class OldController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
        
+        scrollView.contentInset.bottom = 20
+        
         let time = Double(launch.dateUnix)
         let date = Date(timeIntervalSince1970: time)
         let dateFormater = DateFormatter()
@@ -82,5 +84,9 @@ class OldController: UIViewController {
                 break
             }
         }
+    }
+    
+    @IBAction func didTapYoutube(_ sender: Any) {
+        
     }
 }
