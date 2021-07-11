@@ -34,18 +34,18 @@ struct Launch: Hashable, Decodable {
         }
         
         enum CodingKeys: String, CodingKey {
-            case article,
-                 wikipedia,
-                 patch,
+            case patch,
                  flickr,
-                 _webcast = "webcast"
+                 _article = "article",
+                 _webcast = "webcast",
+                 _wikipedia = "wikipedia"
         }
         var patch: Patch?
         var flickr: Flickr?
         
-        
+        private var _article: String?
         private var _webcast: String?
-        
+        private var _wikipedia: String?
         
         
         var webcast: URL? {
@@ -54,8 +54,20 @@ struct Launch: Hashable, Decodable {
             }
             return URL(string: url)
         }
-        var article: URL?
-        var wikipedia: URL?
+        
+        var article: URL?{
+            guard let url = _article else {
+                return nil
+            }
+            return URL(string: url)
+        }
+        
+        var wikipedia: URL? {
+            guard let url = _wikipedia else {
+                return nil
+            }
+            return URL(string: url)
+        }
     }
     
     enum CodingKeys: String, CodingKey, Hashable {

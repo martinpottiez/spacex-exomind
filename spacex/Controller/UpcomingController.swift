@@ -12,6 +12,7 @@ class UpcomingController: UIViewController, ImgDownloaderDelegate {
     @IBOutlet private weak var logoLaunch: UIImageView!
     @IBOutlet private weak var nameLaunch: UILabel!
     @IBOutlet private weak var dateLaunch: UILabel!
+    @IBOutlet private weak var detailsLaunch: UILabel!
     
     var launch: Launch!
     
@@ -43,6 +44,11 @@ class UpcomingController: UIViewController, ImgDownloaderDelegate {
         
         nameLaunch.text = launch.name
         imgDownloader.getIcon(launch: launch)
+        if launch.details == nil {
+            detailsLaunch.text = "No available information for this flight."
+        } else {
+            detailsLaunch.text = launch.details
+        }
     }
     
     func downloadFinished(data: Data?, launch: Launch) {

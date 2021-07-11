@@ -24,6 +24,10 @@ class OldController: UIViewController {
     @IBOutlet private weak var table: UIStackView!
     @IBOutlet private weak var scrollView: UIScrollView!
     
+    @IBOutlet private weak var youtubeButton: UIButton!
+    @IBOutlet private weak var wikipediaButton: UIButton!
+    @IBOutlet private weak var articleButton: UIButton!
+    
     var launch: Launch!
 
     override func viewDidLoad() {
@@ -69,6 +73,17 @@ class OldController: UIViewController {
         } else {
             reusedLaunch.text = "No"
         }
+        
+        if launch.links?.webcast == nil {
+            youtubeButton.isHidden = true
+        }
+        if launch.links?.wikipedia == nil {
+            wikipediaButton.isHidden = true
+        }
+        if (launch.links?.article) == nil {
+            articleButton.isHidden = true
+        }
+        
         if let link = launch?.links?.flickr?.original {
             for (inc, eachImage) in link.enumerated() {
                 if inc > 3 {
@@ -91,6 +106,21 @@ class OldController: UIViewController {
     }
     
     @IBAction func didTapYoutube(_ sender: Any) {
-        
+        if let url = launch.links?.webcast {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
+    
+    @IBAction func didTapWikipedia(_ sender: Any) {
+        if let url = launch.links?.wikipedia {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func didTapArticle(_ sender: Any) {
+        if let url = launch.links?.article {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
 }
