@@ -38,7 +38,7 @@ class OldCell: UICollectionViewCell {
         nameCell.text = item.name
         //imageCell.image = #imageLiteral(resourceName: "OldImg")
         
-        if dateFormater.string(from: date) != nil {
+        if dateFormater.string(from: date) != "" {
             dateCell.text = dateFormater.string(from: date).uppercased()
         } else {
             dateCell.text = "UNAVAILABLE"

@@ -46,7 +46,7 @@ class OldController: UIViewController {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "dd MMMM yyyy"
         
-        if dateFormater.string(from: date) != nil {
+        if dateFormater.string(from: date) != "" {
             dateLaunch.text = dateFormater.string(from: date).uppercased()
         } else {
             dateLaunch.text = "UNAVAILABLE"
@@ -66,7 +66,6 @@ class OldController: UIViewController {
             recoveredLaunch.text = "Valid"
         } else {
             recoveredLaunch.text = "No"
-            print(launch.fairings?.recovered)
         }
         
         if (launch.fairings?.reused) == true {
