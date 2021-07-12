@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cam-qD-mo4">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="892"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="61k-hW-NTO">
                                     <size key="itemSize" width="128" height="128"/>
@@ -73,7 +73,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Sbf-EG-PVH" firstAttribute="trailing" secondItem="ekg-QM-Keb" secondAttribute="trailing" id="2xg-Ua-FAO"/>
-                            <constraint firstItem="Sbf-EG-PVH" firstAttribute="bottom" secondItem="cam-qD-mo4" secondAttribute="bottom" id="5HO-uZ-gCc"/>
+                            <constraint firstAttribute="bottom" secondItem="cam-qD-mo4" secondAttribute="bottom" id="5HO-uZ-gCc"/>
                             <constraint firstItem="Sbf-EG-PVH" firstAttribute="trailing" secondItem="cam-qD-mo4" secondAttribute="trailing" id="Opj-Pf-Jrk"/>
                             <constraint firstItem="cam-qD-mo4" firstAttribute="top" secondItem="nfx-Qs-gup" secondAttribute="top" id="WDd-ij-PpA"/>
                             <constraint firstItem="ekg-QM-Keb" firstAttribute="leading" secondItem="Sbf-EG-PVH" secondAttribute="leading" id="hBh-Dt-vcX"/>
@@ -287,7 +287,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swW-St-d9f">
                                                 <rect key="frame" x="0.0" y="0.0" width="428" height="214"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="BlueRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="NRD-1n-B9Z">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" image="BlueRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="NRD-1n-B9Z">
                                                         <rect key="frame" x="0.0" y="0.0" width="428" height="214"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -296,15 +296,15 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="TITLE" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="f8c-cg-bes">
-                                                        <rect key="frame" x="273.66666666666669" y="107" width="134.33333333333331" height="60"/>
+                                                        <rect key="frame" x="273.66666666666669" y="107" width="134.33333333333331" height="72"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjB-kg-Dpj">
-                                                        <rect key="frame" x="363.66666666666669" y="167" width="44.333333333333314" height="27"/>
+                                                        <rect key="frame" x="363.66666666666669" y="179" width="44.333333333333314" height="15"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="c11-50-rPj"/>
+                                                            <constraint firstAttribute="height" constant="15" id="c11-50-rPj"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -416,13 +416,13 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2wU-sY-gFJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="184"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zMh-4O-STG">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zMh-4O-STG" userLabel="img1">
                                                                         <rect key="frame" x="0.0" y="0.0" width="184" height="184"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="zMh-4O-STG" secondAttribute="height" multiplier="1:1" id="b8U-Hd-J2n"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Enc-uk-hqU">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Enc-uk-hqU" userLabel="img2">
                                                                         <rect key="frame" x="204" y="0.0" width="184" height="184"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="Enc-uk-hqU" secondAttribute="height" multiplier="1:1" id="Myq-hB-j0k"/>
@@ -433,13 +433,13 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QJ7-Vr-W9h">
                                                                 <rect key="frame" x="0.0" y="203.99999999999994" width="388" height="184"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vVx-is-fwa">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vVx-is-fwa" userLabel="img3">
                                                                         <rect key="frame" x="0.0" y="0.0" width="184" height="184"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="vVx-is-fwa" secondAttribute="height" multiplier="1:1" id="xgA-eF-M9s"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sX-ZL-Pcp">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sX-ZL-Pcp" userLabel="img4">
                                                                         <rect key="frame" x="204" y="0.0" width="184" height="184"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="5sX-ZL-Pcp" secondAttribute="height" multiplier="1:1" id="1nd-6Z-ooZ"/>
@@ -521,10 +521,10 @@
                         <outlet property="titleLaunch" destination="f8c-cg-bes" id="9Om-ah-eAI"/>
                         <outlet property="wikipediaButton" destination="3MA-th-11I" id="Wb6-tG-AWs"/>
                         <outlet property="youtubeButton" destination="lYq-Pi-MFT" id="CJg-Fs-uk8"/>
-                        <outletCollection property="images" destination="vVx-is-fwa" collectionClass="NSMutableArray" id="Gt9-NA-Rni"/>
-                        <outletCollection property="images" destination="zMh-4O-STG" collectionClass="NSMutableArray" id="OPw-7u-ojC"/>
-                        <outletCollection property="images" destination="Enc-uk-hqU" collectionClass="NSMutableArray" id="A52-Tc-5eF"/>
-                        <outletCollection property="images" destination="5sX-ZL-Pcp" collectionClass="NSMutableArray" id="8Aq-5L-2wF"/>
+                        <outletCollection property="images" destination="zMh-4O-STG" collectionClass="NSMutableArray" id="QkE-2S-KcN"/>
+                        <outletCollection property="images" destination="Enc-uk-hqU" collectionClass="NSMutableArray" id="zqb-jn-AVh"/>
+                        <outletCollection property="images" destination="vVx-is-fwa" collectionClass="NSMutableArray" id="OUc-0c-pFL"/>
+                        <outletCollection property="images" destination="5sX-ZL-Pcp" collectionClass="NSMutableArray" id="dun-Ae-dwF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBa-ic-2dW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

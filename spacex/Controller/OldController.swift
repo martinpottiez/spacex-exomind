@@ -29,15 +29,20 @@ class OldController: UIViewController {
     @IBOutlet private weak var articleButton: UIButton!
     
     var launch: Launch!
-
-    override func viewDidLoad() {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
+    }
+
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
        
         scrollView.contentInset.bottom = 20
         
@@ -84,24 +89,16 @@ class OldController: UIViewController {
             articleButton.isHidden = true
         }
         
-        if let link = launch?.links?.flickr?.original {
-            for (inc, eachImage) in link.enumerated() {
-                if inc > 3 {
-                    return
-                }
-                images[inc].layer.cornerRadius = 5
-                images[inc].sd_setImage(with: URL(string: eachImage))
+        if let links = launch?.links?.flickr?.original?.prefix(4) {
+            let imageLinks = Array(links)
+            
+            for (index, imageLink) in imageLinks.enumerated() {
+                images[index].layer.cornerRadius = 5
+                images[index].sd_setImage(with: URL(string: imageLink))
             }
-            switch link.count {
-            case 0:
-                allImages.isHidden = true
-    
-            case 2:
-                secondStackView.isHidden = true
-                
-            default:
-                break
-            }
+            
+            allImages.isHidden = imageLinks.isEmpty
+            secondStackView.isHidden = imageLinks.count <= 2
         }
     }
     
