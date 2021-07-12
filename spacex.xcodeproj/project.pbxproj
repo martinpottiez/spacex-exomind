@@ -114,12 +114,9 @@
 		5B0BA90B26932A9F005ABA8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5BF58961269483E100B48A3D /* UpcomingCell.swift */,
-				5BF58962269483E100B48A3D /* UpcomingCell.xib */,
+				5B87C7B4269C80B50040BE16 /* Cells */,
 				5B0BA91926934EF9005ABA8A /* LaunchService.swift */,
 				5B0BA91126933908005ABA8A /* Launch.swift */,
-				5BF5896726949D8500B48A3D /* OldCell.swift */,
-				5BF5896826949D8500B48A3D /* OldCell.xib */,
 				5BCE66702695A5BD0021EE00 /* SectionHeader.swift */,
 				5B0BA91526933FAB005ABA8A /* Section.swift */,
 				5BCE66712695A5BD0021EE00 /* SectionHeader.xib */,
@@ -135,6 +132,17 @@
 				5B5A4A7A2696EC8900EDABF7 /* OldController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B87C7B4269C80B50040BE16 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5BF58961269483E100B48A3D /* UpcomingCell.swift */,
+				5BF58962269483E100B48A3D /* UpcomingCell.xib */,
+				5BF5896726949D8500B48A3D /* OldCell.swift */,
+				5BF5896826949D8500B48A3D /* OldCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		F988ADCAE70DA5A97A8D54E7 /* Frameworks */ = {

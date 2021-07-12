@@ -31,7 +31,7 @@ class UpcomingController: UIViewController {
         let time = Double(launch.dateUnix)
         let date = Date(timeIntervalSince1970: time)
         let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "MMMM yyyy"
+        dateFormater.dateFormat = "MMMM yyyy" 
         
         if dateFormater.string(from: date) != "" {
             dateLaunch.text = dateFormater.string(from: date).uppercased()

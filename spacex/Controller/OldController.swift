@@ -106,8 +106,15 @@ class OldController: UIViewController {
     }
     
     @IBAction private func didTapYoutube(_ sender: Any) {
-        if let url = launch.links?.webcast {
+        
+        let youtubeId = launch.links?.youtubeId
+        
+        if let url = URL(string: "youtube://\(String(describing: youtubeId))") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            if let url = launch.links?.webcast {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
         }
     }
     
