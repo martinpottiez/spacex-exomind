@@ -55,7 +55,7 @@ struct Launch: Hashable, Decodable {
             return URL(string: url)
         }
         
-        var article: URL?{
+        var article: URL? {
             guard let url = _article else {
                 return nil
             }
@@ -71,7 +71,8 @@ struct Launch: Hashable, Decodable {
     }
     
     enum CodingKeys: String, CodingKey, Hashable {
-        case name,
+        case fairings,
+             name,
              links,
              upcoming,
              success,

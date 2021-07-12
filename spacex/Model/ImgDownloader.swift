@@ -73,7 +73,7 @@ class ImgDownloader {
             guard let iconUrl = URL(string: eachImage) else { return
             }
             
-            let download = session.dataTask(with: iconUrl) { [weak self] data, response, error in
+            let download = session.dataTask(with: iconUrl) { data, response, error in
                 if let _ = error {
                     print("error 1")
                 } else {

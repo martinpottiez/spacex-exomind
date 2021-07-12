@@ -22,6 +22,9 @@ class UpcomingController: UIViewController, ImgDownloaderDelegate {
         return imgDownloader
     }()
     
+    var twitterUrl = URL(string: "https://twitter.com/spacex")
+    var youtubeUrl = URL(string: "https://twitter.com/spacex")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
@@ -65,5 +68,17 @@ class UpcomingController: UIViewController, ImgDownloaderDelegate {
     
     func downloadImagesFinished(data: [Data]?, launch: Launch) {
         print("ok")
+    }
+    
+    @IBAction private func didTapTwitter(_ sender: Any) {
+        if let url = twitterUrl {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction private func didTapYoutube(_ sender: Any) {
+        if let url = youtubeUrl {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }

@@ -178,6 +178,9 @@
                                                                         </fragment>
                                                                     </attributedString>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="didTapTwitter:" destination="TNi-hH-7dG" eventType="touchUpInside" id="cRb-RX-52j"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adV-mf-B2g">
                                                                 <rect key="frame" x="288" y="0.0" width="140" height="50"/>
@@ -192,6 +195,9 @@
                                                                         </fragment>
                                                                     </attributedString>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="didTapYoutube:" destination="TNi-hH-7dG" eventType="touchUpInside" id="Ggh-S5-On9"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>

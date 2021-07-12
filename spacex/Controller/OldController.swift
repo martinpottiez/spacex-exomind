@@ -56,19 +56,20 @@ class OldController: UIViewController {
         titleLaunch.text = launch.name?.uppercased()
         descLaunch.text = launch.details
         
-        if launch.success ?? false {
+        if launch.success == true {
             successLaunch.text = "Valid"
         } else {
             successLaunch.text = "Fail"
         }
         
-        if (launch.fairings?.recovered) != nil {
+        if (launch.fairings?.recovered) == true {
             recoveredLaunch.text = "Valid"
         } else {
             recoveredLaunch.text = "No"
+            print(launch.fairings?.recovered)
         }
         
-        if (launch.fairings?.reused) != nil {
+        if (launch.fairings?.reused) == true {
             reusedLaunch.text = "Yes"
         } else {
             reusedLaunch.text = "No"
@@ -105,22 +106,21 @@ class OldController: UIViewController {
         }
     }
     
-    @IBAction func didTapYoutube(_ sender: Any) {
+    @IBAction private func didTapYoutube(_ sender: Any) {
         if let url = launch.links?.webcast {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
-    @IBAction func didTapWikipedia(_ sender: Any) {
+    @IBAction private func didTapWikipedia(_ sender: Any) {
         if let url = launch.links?.wikipedia {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
-    @IBAction func didTapArticle(_ sender: Any) {
+    @IBAction private func didTapArticle(_ sender: Any) {
         if let url = launch.links?.article {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-    
 }
