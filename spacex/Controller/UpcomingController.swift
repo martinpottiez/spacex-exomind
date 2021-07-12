@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UpcomingController: UIViewController, ImgDownloaderDelegate {
+class UpcomingController: UIViewController {
 
     @IBOutlet private weak var logoLaunch: UIImageView!
     @IBOutlet private weak var nameLaunch: UILabel!
@@ -16,14 +16,8 @@ class UpcomingController: UIViewController, ImgDownloaderDelegate {
     
     var launch: Launch!
     
-    lazy var imgDownloader: ImgDownloader = {
-        let imgDownloader = ImgDownloader()
-        imgDownloader.delegate = self
-        return imgDownloader
-    }()
-    
     var twitterUrl = URL(string: "https://twitter.com/spacex")
-    var youtubeUrl = URL(string: "https://twitter.com/spacex")
+    var youtubeUrl = URL(string: "https://www.youtube.com/spacex")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,28 +40,16 @@ class UpcomingController: UIViewController, ImgDownloaderDelegate {
         }
         
         nameLaunch.text = launch.name
-        imgDownloader.getIcon(launch: launch)
+
         if launch.details == nil {
             detailsLaunch.text = "No available information for this flight."
         } else {
             detailsLaunch.text = launch.details
         }
-    }
-    
-    func downloadFinished(data: Data?, launch: Launch) {
-        guard let data = data,
-              self.launch?.name == launch.name
-              else {
-            return
-        }
         
-        DispatchQueue.main.async { [weak self] in
-            self?.logoLaunch.image = UIImage(data: data)
+        if let logoUrl = launch.links?.patch?.small {
+            logoLaunch.sd_setImage(with: URL(string: logoUrl))
         }
-    }
-    
-    func downloadImagesFinished(data: [Data]?, launch: Launch) {
-        print("ok")
     }
     
     @IBAction private func didTapTwitter(_ sender: Any) {

@@ -17,7 +17,10 @@ class HomeController: UIViewController {
     var selectedSection: Int!
     
     private lazy var dataSource: UICollectionViewDiffableDataSource<Section, Launch> = {
-        let dataSource = UICollectionViewDiffableDataSource<Section, Launch>(collectionView: self.collectionView) { collectionView, indexPath, item in
+        let dataSource = UICollectionViewDiffableDataSource<
+            Section,
+            Launch
+        >(collectionView: self.collectionView) { collectionView, indexPath, item in
             
             let actualSection = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
             
@@ -51,15 +54,21 @@ class HomeController: UIViewController {
                                      withReuseIdentifier: SectionHeader.identifier)
         getLaunches()
         self.collectionView.collectionViewLayout = self.createLayout()
-       // createDataSource()
+
         self.collectionView.contentInset.top = 150
         self.collectionView.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.barStyle = .black
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

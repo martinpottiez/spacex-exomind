@@ -35,13 +35,15 @@ struct Launch: Hashable, Decodable {
         
         enum CodingKeys: String, CodingKey {
             case patch,
-                 flickr,
-                 _article = "article",
-                 _webcast = "webcast",
-                 _wikipedia = "wikipedia"
+                 flickr
+            case _article = "article"
+            case _webcast = "webcast"
+            case _wikipedia = "wikipedia"
+            case youtubeId = "youtube_id"
         }
         var patch: Patch?
         var flickr: Flickr?
+        var youtubeId: String?
         
         private var _article: String?
         private var _webcast: String?

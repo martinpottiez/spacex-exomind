@@ -17,30 +17,14 @@
 		5B0BA91626933FAB005ABA8A /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BA91526933FAB005ABA8A /* Section.swift */; };
 		5B0BA91A26934EF9005ABA8A /* LaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0BA91926934EF9005ABA8A /* LaunchService.swift */; };
 		5B3A2A4F269B19C20060A0B9 /* Pods_spacex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63719EA878C20333A7CB532 /* Pods_spacex.framework */; };
-		5B3A2A50269B19C20060A0B9 /* Pods_spacex.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A63719EA878C20333A7CB532 /* Pods_spacex.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B5A4A7B2696EC8900EDABF7 /* OldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5A4A7A2696EC8900EDABF7 /* OldController.swift */; };
 		5BCE66722695A5BD0021EE00 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE66702695A5BD0021EE00 /* SectionHeader.swift */; };
 		5BCE66732695A5BD0021EE00 /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE66712695A5BD0021EE00 /* SectionHeader.xib */; };
 		5BF58963269483E100B48A3D /* UpcomingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF58961269483E100B48A3D /* UpcomingCell.swift */; };
 		5BF58964269483E100B48A3D /* UpcomingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BF58962269483E100B48A3D /* UpcomingCell.xib */; };
-		5BF589662694908500B48A3D /* ImgDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF589652694908500B48A3D /* ImgDownloader.swift */; };
 		5BF5896926949D8500B48A3D /* OldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF5896726949D8500B48A3D /* OldCell.swift */; };
 		5BF5896A26949D8500B48A3D /* OldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BF5896826949D8500B48A3D /* OldCell.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5B3A2A51269B19C20060A0B9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5B3A2A50269B19C20060A0B9 /* Pods_spacex.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5B024AE72695E1C000049DD8 /* UpcomingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingController.swift; sourceTree = "<group>"; };
@@ -59,7 +43,6 @@
 		5BCE66712695A5BD0021EE00 /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		5BF58961269483E100B48A3D /* UpcomingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCell.swift; sourceTree = "<group>"; };
 		5BF58962269483E100B48A3D /* UpcomingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingCell.xib; sourceTree = "<group>"; };
-		5BF589652694908500B48A3D /* ImgDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgDownloader.swift; sourceTree = "<group>"; };
 		5BF5896726949D8500B48A3D /* OldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldCell.swift; sourceTree = "<group>"; };
 		5BF5896826949D8500B48A3D /* OldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OldCell.xib; sourceTree = "<group>"; };
 		9F0E0C60062EC9939462D8B1 /* Pods-spacex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spacex.release.xcconfig"; path = "Target Support Files/Pods-spacex/Pods-spacex.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				5BF58961269483E100B48A3D /* UpcomingCell.swift */,
-				5BF589652694908500B48A3D /* ImgDownloader.swift */,
 				5BF58962269483E100B48A3D /* UpcomingCell.xib */,
 				5B0BA91926934EF9005ABA8A /* LaunchService.swift */,
 				5B0BA91126933908005ABA8A /* Launch.swift */,
@@ -176,7 +158,6 @@
 				5B0BA8F0269310D5005ABA8A /* Resources */,
 				5B0BA90926931197005ABA8A /* Swiftlint */,
 				594C0C6484CC1BE9CEC144E2 /* [CP] Embed Pods Frameworks */,
-				5B3A2A51269B19C20060A0B9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,7 +291,6 @@
 				5B0BA8F6269310D5005ABA8A /* AppDelegate.swift in Sources */,
 				5BCE66722695A5BD0021EE00 /* SectionHeader.swift in Sources */,
 				5BF58963269483E100B48A3D /* UpcomingCell.swift in Sources */,
-				5BF589662694908500B48A3D /* ImgDownloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
