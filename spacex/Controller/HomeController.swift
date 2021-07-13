@@ -11,6 +11,8 @@ class HomeController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    @IBOutlet private weak var image: UIImageView!
+    
     var pastLaunches: [Launch] = []
     var upcomingLaunches: [Launch] = []
     var selectedLaunch: Int!
@@ -55,8 +57,12 @@ class HomeController: UIViewController {
         getLaunches()
         self.collectionView.collectionViewLayout = self.createLayout()
 
-        self.collectionView.contentInset.top = 150
         self.collectionView.delegate = self
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.collectionView.contentInset.top = image.bounds.height
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -137,7 +143,6 @@ class HomeController: UIViewController {
         item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 12.5, bottom: 11, trailing: 10.5)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.75), heightDimension: .estimated(200))
-        
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
