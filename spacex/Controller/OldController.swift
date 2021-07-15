@@ -28,6 +28,8 @@ class OldController: UIViewController {
     @IBOutlet private weak var wikipediaButton: UIButton!
     @IBOutlet private weak var articleButton: UIButton!
     
+    @IBOutlet private weak var trailingSecondView: NSLayoutConstraint!
+    
     var launch: Launch!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,6 +102,12 @@ class OldController: UIViewController {
             allImages.isHidden = imageLinks.isEmpty
             secondStackView.isHidden = imageLinks.count <= 2
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let rightConstraint = self.view.safeAreaInsets.right ?? 0
+        self.trailingSecondView.constant = rightConstraint
     }
     
     @IBAction private func didTapYoutube(_ sender: Any) {

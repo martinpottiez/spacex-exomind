@@ -152,10 +152,9 @@ class HomeController: UIViewController {
         section.orthogonalScrollingBehavior = .continuous
         
         section.interGroupSpacing = 5
-        
+        //traitCollection.horizontalSizeClass == .
         return section
     }
-    
     private func supplementary(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView {
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
